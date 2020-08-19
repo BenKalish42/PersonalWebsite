@@ -1,0 +1,310 @@
+/*
+* @Author: Ben Kalish
+* @Date:   2020-08-04 16:06:51
+* @Last Modified by:   Ben Kalish
+* @Last Modified time: 2020-08-18 19:02:32
+*/
+
+
+// Fluid Type responsive font-sizes and properties from Indrek Paas
+// changed to include default viewport width range of a small phone to a 4k monitor
+// https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+
+@mixin fluid-type($properties, $min-value, $max-value,  $min-vw: 320px, $max-vw: 2160px) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+html {
+	background: #000000;
+}
+
+div[class*="container"] {
+	display: flex;
+	flex-direction: column;
+}
+
+.navbar-container {
+	position: fixed;
+	z-index: 1000;
+	top: 5%;
+	right: 2%;
+
+	align-items: center;
+	justify-content: center;
+
+	background: linear-gradient(45deg,
+		// rgb(75, 180, 225), 2%,
+		rgb(37, 46, 210), 30%,
+		rgb(119, 0, 170),
+		rgb(189, 7, 89),
+		rgb(219, 112, 32));
+	box-shadow: 3px 3px 6px 2px #000000;
+	border-radius: 4px;
+
+	.navbar-inner-container {
+		margin: 3px;
+
+		background: linear-gradient(90deg, #101010, #202020, #101010);
+		border-radius: 4px;
+
+		.menu-item {
+			font-size: 16px;
+			font-weight: bold;
+			color: #FFFFFF;
+			margin: 5px 10px;
+
+			cursor: pointer;
+
+			&:hover {
+				color: #DDDDDF;
+			}
+
+			&:active {
+				color: #BBBBBF;
+			}
+		}
+	}
+}
+
+.section-container {
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	background: black;
+	width: 100%;
+	overflow: hidden;
+	margin: 48px 0;
+
+	.section-graphic {
+		// can extend width past 100 and change left for different graphic flavor
+		position: absolute;
+		top: -82px;
+		width: 100%;
+		z-index: 0;
+		opacity: 0.5;
+	}
+
+	#Section1Graphic {
+		width: 150%!important;
+		left: 0;
+	}
+
+	#Section2Graphic {
+		width: 150%!important;
+		left: -25%;
+	}
+
+	#Section3Graphic {
+		width: 150%!important;
+		left: -50%;
+	}
+
+	.section-graphic-overlay {
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.overlay-top {
+		top: 0;
+		background: linear-gradient(rgba(0, 0, 0, 1), 70%, rgba(0, 0, 0, 0));
+		height: 40%;
+	}
+
+	.overlay-bottom {
+		bottom: 0;
+		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+		height: 70%;
+	}
+
+	.section-title{
+		z-index: 1;
+		color: white;
+		line-height: 100%;
+		text-align: center;
+		text-shadow: 0 6px 6px #000000;
+		font-size: 96px;
+		font-weight: 600;
+		margin-top: 24px;
+
+	}
+
+	.section-content-container {
+		align-items: center;
+		flex-wrap: wrap;
+		z-index: 2;
+		width: 90%;
+		// TODO: make this fluid? how should content container scale?
+		max-height: 1080px;
+		margin: 40px auto;
+	}
+}
+
+.title-section {
+	position: relative;
+}
+
+.title-container {
+	position: absolute;
+	top: 45%;
+
+	color: white;
+	font-family: 'Teko', sans-serif;
+
+	span {
+		line-height: 100%;
+		text-align: center;
+		text-shadow: 0 6px 6px #000000;
+	}
+
+	.name {
+		@include fluid-type(font-size, 24px, 144px);
+		font-weight: 600;
+	}
+	.description {
+		@include fluid-type(font-size, 8px, 48px);
+	}
+}
+
+.title-graphic {
+	width: 60%;
+}
+
+.project-container {
+	align-items: center;
+	justify-content: center;
+
+	margin: 20px;
+	border-radius: 4px;
+
+	height: 300px;
+	max-width: 800px;
+
+	background: linear-gradient(45deg,
+			// rgb(75, 180, 225), 2%,
+			rgb(37, 46, 210), 30%,
+			rgb(119, 0, 170),
+			rgb(189, 7, 89),
+			rgb(219, 112, 32));
+
+	.project-inner-container {
+		height: 100%;
+		margin: 3px;
+		align-items: center;
+		justify-content: flex-start;
+		background: linear-gradient(90deg, #101010, #202020, #101010);
+
+		padding: 24px;
+
+		color: #ffffff;
+		cursor: pointer;
+
+		&:hover .arrow-container {
+
+			margin-right: 10px!important;
+		}
+
+		.header-container {
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+
+			margin-bottom: 20px;
+
+			.icon-container {
+				align-items: center;
+				justify-content: center;
+			}
+
+			.project-info-container {
+				align-items: flex-start;
+				justify-content: center;
+				margin-left: 20px;
+
+				.title {
+					font-size: 48px;
+					font-weight: bold;
+					line-height: 48px;
+
+				}
+
+				.tagline, .technologies {
+					font-size: 24px;
+					line-height: 24px;
+					margin-top: 4px;
+				}
+			}
+
+			.arrow-container {
+
+				// This moves the arrow to the right, as there is no justify-self in flex
+				margin-left: auto;
+				align-self: flex-start;
+
+				// TODO: think about switching to pos abs
+				margin-right: 20px;
+				margin-top: 15px;
+				transition: margin-right 50ms ease;
+
+				// .arrow-icon {
+				// 	margin-left: 0;
+				// 	transition: margin-left 200ms;
+				// }
+
+			}
+		}
+
+		.description-container {
+			align-items: center;
+			justify-content: center;
+
+			.description {
+				font-size: 24px;
+				line-height: 24px;
+			}
+		}
+	}
+}
+
+.music-section-container {
+	flex-direction: row!important;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.music-subsection-container {
+	width: 46%;
+}
+
+.music-section-title {
+	color: white;
+	line-height: 100%;
+	text-align: center;
+	text-shadow: 0 6px 6px #000000;
+	font-size: 72px;
+	font-weight: 600;
+	margin: 24px 0;
+}

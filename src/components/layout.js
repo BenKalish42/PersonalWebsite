@@ -9,15 +9,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Navbar from "./navbar"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+import { ScrollArea } from "react-scroll-to"
+ 
+const Layout = ({ children, sectionRefs }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          subtitle
         }
       }
     }
@@ -25,21 +28,21 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
+      <ScrollArea
+        id="mainArea"
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <main>{children}</main>
+        <Navbar sectionRefs={sectionRefs}/>
+        {children}
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
+      </ScrollArea>
     </>
   )
 }
