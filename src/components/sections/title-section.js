@@ -5,7 +5,7 @@ import { ReactComponent as TitleGraphic } from "../graphics/title-graphic.svg"
 const TitleSection = (props) => {
 
 	return(
-		<div className="section-container title-section" id="Top">
+		<div className="title-section-container" id="Top">
 			<div className="title-container">
 				<span className="name">
 					BEN KALISH

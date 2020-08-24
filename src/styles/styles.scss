@@ -1,8 +1,8 @@
 /*
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
-* @Last Modified by:   Ben Kalish
-* @Last Modified time: 2020-08-18 19:02:32
+* @Last Modified by:   benjaminkalish
+* @Last Modified time: 2020-08-24 17:39:12
 */
 
 
@@ -95,7 +95,7 @@ div[class*="container"] {
 	background: black;
 	width: 100%;
 	overflow: hidden;
-	margin: 48px 0;
+	margin: 72px 0;
 
 	.section-graphic {
 		// can extend width past 100 and change left for different graphic flavor
@@ -157,13 +157,24 @@ div[class*="container"] {
 		z-index: 2;
 		width: 90%;
 		// TODO: make this fluid? how should content container scale?
-		max-height: 1080px;
+		// max-height: 1080px;
 		margin: 40px auto;
+	}
+
+	@media screen and (min-width: 890px) {
+		.section-content-container {
+			max-height: 1080px;
+		}
 	}
 }
 
-.title-section {
+.title-section-container {
 	position: relative;
+	align-items: center;
+	justify-content: center;
+	background: black;
+	width: 100%;
+	overflow: hidden;
 }
 
 .title-container {
@@ -192,9 +203,36 @@ div[class*="container"] {
 	width: 60%;
 }
 
+.about-me-section-container {
+	// TODO: fix big div container selector so we don't need to do this
+	// maybe replace with Sass compile trick
+	flex-direction: row!important;
+	flex-wrap: wrap;
+	overflow: hidden; 
+
+	// TODO: use flex-grow with these guys to maintain proportions as we scale
+	.about-me-photo-container {
+		flex-grow: 1;
+		flex-basis: 0;
+		min-width: 300px;
+	}
+
+	.about-me-text-container {
+		flex-grow: 3;
+		flex-basis: 0;
+		min-width: 500px;
+		padding: 20px;
+
+		.about-me-text {
+			color: #FFFFFF;
+		}
+	}
+}
+
 .project-container {
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 
 	margin: 20px;
 	border-radius: 4px;
@@ -215,6 +253,7 @@ div[class*="container"] {
 		align-items: center;
 		justify-content: flex-start;
 		background: linear-gradient(90deg, #101010, #202020, #101010);
+		overflow: hidden;
 
 		padding: 24px;
 
@@ -280,10 +319,12 @@ div[class*="container"] {
 		.description-container {
 			align-items: center;
 			justify-content: center;
+			overflow: hidden;
 
 			.description {
 				font-size: 24px;
 				line-height: 24px;
+				height: 100%;
 			}
 		}
 	}
