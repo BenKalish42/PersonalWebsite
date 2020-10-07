@@ -13,9 +13,15 @@ import SectionLayout from "../components/sections/section-layout"
 
 import "../styles/styles.scss"
 
+const sections = [
+    {title: "Top", id: "Top"},
+    {title: "About Me", id: "AboutMe"},
+    {title: "Projects", id: "Projects"},
+    {title: "Music", id: "Music"},
+]
 
 const IndexPage = () => (
-  <Layout>
+  <Layout sections={sections}>
     <SEO title="Home" />
     <TitleSection />
     <AboutMeSection />

@@ -4,7 +4,7 @@ import SectionLayout from './section-layout'
 import Project from '../project'
 
 const ProjectsSection = () => (
-	<SectionLayout sectionTitle="Projects">
+	<SectionLayout sectionTitle="Software">
 		<Project />
 		<Project />
 		<Project />

@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "Inception";
+  src: local("Inception"), url('../fonts/Inception.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Futura Condensed";
+  src: local("FuturaCondensedMedium"), url('../fonts/FuturaCondensedMedium.ttf') format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Futura Condensed";
+  src: local("FuturaCondensedBold"), url('../fonts/FuturaCondensedBold.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Futura Book";
+  src: local("FuturaBook"), url('../fonts/FuturaBook.ttf') format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Book";
+  src: local("FuturaBookItalic"), url('../fonts/FuturaBookItalic.ttf') format("truetype");
+  font-style: italic;
+}
+
+html {
+    background: #000000;
+}
+
+.navbar-container {
+	background: rgb(0, 50, 242);
+}
+
+.main-page-outer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #FFFFFF;
+	line-height: initial; // overrides layout.css
+}
+
+.main-page-title {
+	font-family: "Inception";
+	font-size: 144px;
+	font-weight: normal;
+	text-align: center;
+}
+
+.main-page-subtitle {
+	font-family: "Futura Condensed";
+	font-size: 30px;
+	font-weight: normal;
+	text-align: center;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+}
+
+.fluid-image {
+	width: 100%;
+}
+
+.fluid-image-half {
+	width: 50%;
+}
+
+.faded-image-container {
+	display: flex;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	z-index: -1;
+
+	.fade {
+	height: 100%;
+    width: 100%;
+    position:absolute;
+    z-index: 1;
+    background: -webkit-linear-gradient(left, 
+                rgba(0,0,0,1) 0%, 
+                rgba(0,0,0,0) 20%,
+                rgba(0,0,0,0) 80%,
+                rgba(0,0,0,1) 100%
+    );
+	}
+}
+
+.main-content-container, .main-section-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+
+	margin: 30px 0;
+}
+
+.main-section-title {
+	font-family: "Futura Condensed";
+	font-size: 64px;
+	font-weight: normal;
+}
+
+.main-section-subtitle {
+	font-family: "Futura Book";
+	font-size: 36px;
+	font-style: italic;
+	margin-top: 30px;
+
+	align-self: flex-start;
+}
+
+.main-section-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+	max-width: 1200px;
+    padding: 0 20px;
+}
+
+.adjacent-images-container {
+	display: flex;
+	flex-direction: row!important;
+	justify-content: space-between;
+	width: 100%;
+}
+
+p {
+	margin-block-start: 0.5em;
+	margin-block-end: 0.5em;
+}
+
+p, .example-label, .example-sublabel {
+	font-family: "Futura Book";
+	font-size: 20px;
+	text-align: left;
+	text-justify: inter-word;
+	align-self: flex-start;
+}
+
+.example-sublabel {
+	font-size: 16px;
+	margin: 20px 0 10px;
+}
+
+.example-label {
+	font-style: italic;
+	margin-top: 40px;
+}
+
+.example-container {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	width: 100%;
+	padding-left: 22px;
+	// margin-bottom: 50px;
+}
+
+.example-audio-container {
+	display: flex;
+	width: 50%;
+}
+
+.installer-link {
+	align-self: flex-start;
+	font-size: 24px;
+	margin-bottom: 32px;
+
+	color: rgb(0, 50, 242);
+}
+
+.full-width-image {
+	width: 100%;
+}

@@ -14,7 +14,7 @@ import "./layout.css"
 
 import { ScrollArea } from "react-scroll-to"
  
-const Layout = ({ children, sectionRefs }) => {
+const Layout = ({ children, sections }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -35,12 +35,12 @@ const Layout = ({ children, sectionRefs }) => {
           flexDirection: "column",
         }}
       >
-        <Navbar sectionRefs={sectionRefs}/>
+        <Navbar sections={sections}/>
         {children}
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()} Ben Kalish, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">GatsbyJS</a>
         </footer>
       </ScrollArea>
     </>

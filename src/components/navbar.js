@@ -10,21 +10,30 @@ function navigationHandler(elementId){
 	}
 }
 
-const Navbar = () => (
+function renderSections(sections){
+	return sections.map((section) => 
+		<div className="menu-item" onClick={navigationHandler(section.id)}>
+			{section.title}
+		</div>
+	);
+}
+
+const Navbar = ({sections}) => (
 	<div className="navbar-container">
 		<div className="navbar-inner-container">
-			<div className="menu-item" onClick={navigationHandler("Top")}>
-				Top
-			</div>
-			<div className="menu-item" onClick={navigationHandler("AboutMe")}>
-				About Me
-			</div>
-			<div className="menu-item" onClick={navigationHandler("Projects")}>
-				Projects
-			</div>
-			<div className="menu-item" onClick={navigationHandler("Music")}>
-				Music
-			</div>
+			{/* <div className="menu-item" onClick={navigationHandler("Top")}> */}
+			{/* 	Top */}
+			{/* </div> */}
+			{/* <div className="menu-item" onClick={navigationHandler("AboutMe")}> */}
+			{/* 	About Me */}
+			{/* </div> */}
+			{/* <div className="menu-item" onClick={navigationHandler("Software")}> */}
+			{/* 	Software */}
+			{/* </div> */}
+			{/* <div className="menu-item" onClick={navigationHandler("Music")}> */}
+			{/* 	Music */}
+			{/* </div> */}
+			{renderSections(sections)}
 		</div>
 	</div>
 )
