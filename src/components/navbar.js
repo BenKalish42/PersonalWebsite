@@ -11,8 +11,12 @@ function navigationHandler(elementId){
 }
 
 function renderSections(sections){
-	return sections.map((section) => 
-		<div className="menu-item" onClick={navigationHandler(section.id)}>
+	if(sections) return sections.map((section) => 
+		<div
+			className="menu-item"
+			onClick={navigationHandler(section.id)}
+			key={section.id}
+		>
 			{section.title}
 		</div>
 	);

@@ -1,17 +1,14 @@
 import React from "react"
 import Image from 'gatsby-image'
+import { InlineMath, BlockMath } from 'react-katex';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import "../styles/fade-delay.scss"
+import 'katex/dist/katex.min.css';
 
-function navigationHandler(elementId){
-	return () => {
-		const el = document.querySelector(`#${elementId}`)
-		if(el) el.scrollIntoView()
-	}
-}
+
 
 const sections = [
 	{title: "About", id: "about"},
@@ -26,10 +23,10 @@ const FadeDelayPage = ({data}) => (
 		<SEO title="Fade Delay" />
 		<div className="main-page-outer">
 			<div className="main-page-title">FADE DELAY</div>
-			<div className="main-page-subtitle">A spatial delay effect that fades sounds into space.</div>
+			<div className="main-page-subtitle">Spatial echo FX for fading sounds into space.</div>
 			<div className="faded-image-container">
 				<div className="fade" />
-				{/* <img src="../fade-delay-grid.png" className="full-width-image" /> */}
+				{/* <div className="animation-line"/> */}
 				<Image fluid={data.grid.childImageSharp.fluid} className="fluid-image"/>
 			</div>
 			<div className="main-content-container">
@@ -39,7 +36,6 @@ const FadeDelayPage = ({data}) => (
 						<p>
 							Fade Delay is a standard audio delay plugin built around a unique feature: The ability to decrease the stereo width of the echoes as they repeat. This is designed to create the perception that the listener and the source are moving further away from each other in space.
 						</p>
-						{/* <img src="../images/fade-delay-window.png" className="full-width-image" /> */}
 						<Image fluid={data.window.childImageSharp.fluid} className="fluid-image"/>
 						<div className="main-section-subtitle">What is a delay?</div>
 						<p>
@@ -153,16 +149,16 @@ const FadeDelayPage = ({data}) => (
 						<p>
 							This concept can also be proven mathematically with some concepts from trigonometry class. 
 						</p>
-						{/* <p> */}
-						{/* 	We can model the relationship between the listener and the width of the stage as an isosceles triangle made of two adjacent right triangles. The distance along the “stage” from the middle sounds to the widest sounds is <span v-katex="'a'"/>. The distance to sounds directly in the middle is the midline <span v-katex="'b'"/> — the side those triangles share. The hypotenuse <span v-katex="'c'"/> of each of those triangles represents the distance from the widest sound in each direction to the listener. Let’s represent the “wideness” of the widest sound using angle <span v-katex="'\\theta'"/> between the hypotenuse and the midline. Using the definition of the Tangent function, we can prove that increasing the distance <span v-katex="'b'"/> between the listener and the sounds will result in a smaller angle <span v-katex="'\\theta'"/> and therefore a narrower overall sound: */}
-						{/* </p> */}
-						{/* <div className="adjacent-images-container"> */}
-						{/* 	<div v-katex:display="'\\tan{(\\theta)} = \\frac{a}{b} \\Rightarrow \\theta = \\arctan{(\\frac{a}{b})}'"></div> */}
-						{/* 	<img src="../images/fade-delay-math-graphic-1.png" className="full-width-image" /> */}
-						{/* </div> */}
-						{/* <p> */}
-						{/* 	If we assume the distance <span v-katex="'a'"/> between the widest sound and the center sound on the “stage” is constant (the sound sources remain static in relation to each other), then we know the term <span v-katex="'\\frac{a}{b}'"/> will decrease as <span v-katex="'b'"/> increases. Since arctan is a monotonically increasing function, as <span v-katex="'\\frac{a}{b}'"/> decreases, <span v-katex="'\\theta'"/> will also decrease. In other words, as the distance from the sound increases, the perceived width of the sound decreases.  */}
-						{/* </p> */}
+						<p>
+							We can model the relationship between the listener and the width of the stage as an isosceles triangle made of two adjacent right triangles. The distance along the “stage” from the middle sounds to the widest sounds is <InlineMath math="a"/>. The distance to sounds directly in the middle is the midline <InlineMath math="b"/> — the side those triangles share. The hypotenuse <InlineMath math="c"/> of each of those triangles represents the distance from the widest sound in each direction to the listener. Let’s represent the “wideness” of the widest sound using angle <InlineMath math="\theta"/> between the hypotenuse and the midline. Using the definition of the Tangent function, we can prove that increasing the distance <InlineMath math="b"/> between the listener and the sounds will result in a smaller angle <InlineMath math="\theta"/> and therefore a narrower overall sound:
+						</p>
+						<div className="adjacent-images-container">
+							<BlockMath math="\tan{(\theta)} = \frac{a}{b} \Rightarrow \theta = \arctan{(\frac{a}{b})}"/>
+							<Image fluid={data.graphicMath.childImageSharp.fluid} className="fluid-image-half" />
+						</div>
+						<p>
+							If we assume the distance <InlineMath math="a"/> between the widest sound and the center sound on the “stage” is constant (the sound sources remain static in relation to each other), then we know the term <InlineMath math="\frac{a}{b}"/> will decrease as <InlineMath math="b"/> increases. Since <InlineMath math="\arctan"/> is a monotonically increasing function, as <InlineMath math="\frac{a}{b}"/> decreases, <InlineMath math="\theta"/> will also decrease. In other words, as the distance from the sound increases, the perceived width of the sound decreases. 
+						</p>
 
 					</div>
 				</div>
@@ -230,9 +226,9 @@ const FadeDelayPage = ({data}) => (
 					<div className="main-section-content">
 						<div className="main-section-subtitle">Installers</div>
 						<p>
-							v0.3.0:
+							v0.3.1:
 						</p>
-						<a className="installer-link" href="http://www.mediafire.com/file/k5dcr2jpovcpnbb/FadeDelay0.3.0.pkg/file" target="_blank">Download Installer for Mac OS (VST3, AU)</a>
+						<a className="installer-link" href="https://github.com/BenKalish42/FadeDelay/releases/download/v0.3.1/FadeDelay0.3.1.pkg" target="_blank">Download Installer for Mac OS (VST3, AU)</a>
 						<div className="main-section-subtitle">Source</div>
 						<p>
 							This plugin was built in C++ atop the JUCE framework. The source code will be available for a limited time on GitHub. 
@@ -272,6 +268,10 @@ export const pageQuery = graphql`
     }
 
     graphicFar: file(relativePath: { eq: "fade-delay-fade-graphic-far.png" }) {
+       ...fluidImage
+    }
+
+    graphicMath: file(relativePath: { eq: "fade-delay-math-graphic-1.png" }) {
        ...fluidImage
     }
 
