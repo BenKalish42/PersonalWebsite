@@ -26,7 +26,10 @@ const FadeDelayPage = ({data}) => (
 			<div className="main-page-subtitle">Spatial echo FX for fading sounds into space.</div>
 			<div className="faded-image-container">
 				<div className="fade" />
-				{/* <div className="animation-line"/> */}
+				<div className="animation-line one"/>
+				<div className="animation-line two"/>
+				<div className="animation-line three"/>
+				<div className="animation-line four"/>
 				<Image fluid={data.grid.childImageSharp.fluid} className="fluid-image"/>
 			</div>
 			<div className="main-content-container">
