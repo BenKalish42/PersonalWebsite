@@ -22,7 +22,9 @@ const FadeDelayPage = ({data}) => (
 	<Layout sections={sections}>
 		<SEO title="Fade Delay" />
 		<div className="main-page-outer">
-			<div className="main-page-title">FADE DELAY</div>
+			<div className="main-page-title">
+				<span className="title-text">FADE DELAY</span>
+			</div>
 			<div className="main-page-subtitle">Spatial echo FX for fading sounds into space.</div>
 			<div className="faded-image-container">
 				<div className="fade" />
@@ -30,7 +32,7 @@ const FadeDelayPage = ({data}) => (
 				<div className="animation-line two"/>
 				<div className="animation-line three"/>
 				<div className="animation-line four"/>
-				<Image fluid={data.grid.childImageSharp.fluid} className="fluid-image"/>
+				<Image fluid={data.grid.childImageSharp.fluid} className="fluid-image-full"/>
 			</div>
 			<div className="main-content-container">
 				<div className="main-section-container" id="about">
@@ -39,7 +41,7 @@ const FadeDelayPage = ({data}) => (
 						<p>
 							Fade Delay is a standard audio delay plugin built around a unique feature: The ability to decrease the stereo width of the echoes as they repeat. This is designed to create the perception that the listener and the source are moving further away from each other in space.
 						</p>
-						<Image fluid={data.window.childImageSharp.fluid} className="fluid-image"/>
+						<Image fluid={data.window.childImageSharp.fluid} className="fluid-image-full"/>
 						<div className="main-section-subtitle">What is a delay?</div>
 						<p>
 							In its technically simplest form, a delay effect records sound playing now, and plays it back a set amount of time later. 
@@ -135,16 +137,15 @@ const FadeDelayPage = ({data}) => (
 						<p>
 							Imagine you have a wide stage with a full band of instrument players spread across it. You’re standing very close (front row — you’re a huge fan). You close your eyes, and it is very easy to tell where players are located. A guitar is loudly shredding in your left ear, so a guitarist must be on the far left of the stage. There’s thumping bass in your right ear, so the bassist must be standing on the right. The drums are equally loud and in your face, so they are probably directly in front of you. They are clearly separate sources of sound, standing far apart from each other. 
 						</p>
+						<Image fluid={data.graphicClose.childImageSharp.fluid} className="fluid-image" />
 						<p>
 							Your eardrums start to hurt, so you move to the back. It’s less loud, and you can still tell where all the band members are standing, but it’s less pronounced. The guitarist doesn’t sound as far left, nor the bassist as far right. You can see this visually too — The stage used to take up your entire field of view, but is now just in the center. 
 						</p>
-						<div className="adjacent-images-container">
-							<Image fluid={data.graphicClose.childImageSharp.fluid} className="fluid-image-half" />
-							<Image fluid={data.graphicFar.childImageSharp.fluid} className="fluid-image-half" />
-						</div>
+						<Image fluid={data.graphicFar.childImageSharp.fluid} className="fluid-image" />
 						<p>
 							You leave the show and head to the parking lot behind you. The stage is quite far away now, but you notice something else: It sounds like the band is coming from a singular spot behind you. It’s nearly impossible to tell that the musicians are standing spread out on a stage; If they were standing on top of each other, it would sound nearly the same from this distance.
 						</p>
+						<Image fluid={data.graphicFarthest.childImageSharp.fluid} className="fluid-image" />
 						<p>
 							This is how wide sound fades; it gets quieter and narrower as you move further away. 
 						</p>
@@ -157,7 +158,7 @@ const FadeDelayPage = ({data}) => (
 						</p>
 						<div className="adjacent-images-container">
 							<BlockMath math="\tan{(\theta)} = \frac{a}{b} \Rightarrow \theta = \arctan{(\frac{a}{b})}"/>
-							<Image fluid={data.graphicMath.childImageSharp.fluid} className="fluid-image-half" />
+							<Image fluid={data.graphicMath.childImageSharp.fluid} className="fluid-image" />
 						</div>
 						<p>
 							If we assume the distance <InlineMath math="a"/> between the widest sound and the center sound on the “stage” is constant (the sound sources remain static in relation to each other), then we know the term <InlineMath math="\frac{a}{b}"/> will decrease as <InlineMath math="b"/> increases. Since <InlineMath math="\arctan"/> is a monotonically increasing function, as <InlineMath math="\frac{a}{b}"/> decreases, <InlineMath math="\theta"/> will also decrease. In other words, as the distance from the sound increases, the perceived width of the sound decreases. 
@@ -271,6 +272,10 @@ export const pageQuery = graphql`
     }
 
     graphicFar: file(relativePath: { eq: "fade-delay-fade-graphic-far.png" }) {
+       ...fluidImage
+    }
+
+    graphicFarthest: file(relativePath: { eq: "fade-delay-fade-graphic-farthest.png" }) {
        ...fluidImage
     }
 

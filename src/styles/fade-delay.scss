@@ -54,10 +54,20 @@ html {
 }
 
 .main-page-title {
-	font-family: "Inception";
-	font-size: 144px;
-	font-weight: normal;
-	text-align: center;
+	overflow: hidden;
+	display: flex;
+
+	.title-text {
+		font-family: "Inception";
+		font-size: 144px;
+		font-weight: normal;
+		text-align: center;
+
+		@media only screen and (max-width: 500px) {
+			margin-top: 50px;
+			font-size: 84px;
+		}
+	}
 }
 
 .main-page-subtitle {
@@ -67,14 +77,18 @@ html {
 	text-align: center;
 	letter-spacing: 3px;
 	margin-bottom: 20px;
+	@media only screen and (max-width: 500px) {
+		font-size: 24px;
+	}
 }
 
 .fluid-image {
 	width: 100%;
+	max-width: 600px;
 }
 
-.fluid-image-half {
-	width: 50%;
+.fluid-image-full {
+	width: 100%;
 }
 
 @keyframes fadeline {
@@ -121,7 +135,7 @@ html {
 		margin: 0 auto;
 		width: 73.5%;
 		height: 100%;
-		border-bottom: 5px solid #eeeeee;
+		border-bottom: 5px solid transparent;
 		z-index: 3;
 
 		animation-name: fadeline;
@@ -136,7 +150,7 @@ html {
 		animation-delay: 400ms;
 		height: 59%;
 		width: 49%;
-		border-bottom: 4px solid #eeeeee;
+		border-bottom: 4px solid transparent;
 		opacity: 0.8;
 	}
 
@@ -145,7 +159,7 @@ html {
 		animation-delay: 800ms;
 		height: 26.4%;
 		width: 29%;
-		border-bottom: 3px solid #eeeeee;
+		border-bottom: 3px solid transparent;
 		opacity: 0.6;
 	}
 
@@ -153,7 +167,7 @@ html {
 		animation-delay: 1200ms;
 		height: 5%;
 		width: 17%;
-		border-bottom: 2px solid #eeeeee;
+		border-bottom: 2px solid transparent;
 		opacity: 0.4;
 	}
 }

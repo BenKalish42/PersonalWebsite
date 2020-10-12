@@ -2,7 +2,7 @@
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
 * @Last Modified by:   benjaminkalish
-* @Last Modified time: 2020-10-06 21:29:19
+* @Last Modified time: 2020-10-12 14:28:17
 */
 
 
@@ -40,9 +40,110 @@ html {
 	background: #000000;
 }
 
+
 div[class*="container"] {
 	display: flex;
 	flex-direction: column;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  left: 24px;
+  top: 24px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+	background: white;
+	border-radius: 2px;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:active {
+		opacity: 0.6;
+	}
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-burger-button > button, .bm-cross-button > button {
+	outline: none!important;
+	border: none;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: linear-gradient(180deg, #101010, #202020, #101010);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-burger-button {
+	
+}
+
+.menu-item {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin: 5px 10px;
+	outline: none;
+	border: none;
+	user-select: none;
+
+	cursor: pointer;
+
+	&:hover {
+		color: #DDDDDF;
+	}
+
+	&:active {
+		color: #BBBBBF;
+	}
 }
 
 .navbar-container {
@@ -68,23 +169,6 @@ div[class*="container"] {
 
 		background: linear-gradient(90deg, #101010, #202020, #101010);
 		border-radius: 4px;
-
-		.menu-item {
-			font-size: 16px;
-			font-weight: bold;
-			color: #FFFFFF;
-			margin: 5px 10px;
-
-			cursor: pointer;
-
-			&:hover {
-				color: #DDDDDF;
-			}
-
-			&:active {
-				color: #BBBBBF;
-			}
-		}
 	}
 }
 

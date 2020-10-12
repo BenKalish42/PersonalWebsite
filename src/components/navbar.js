@@ -1,45 +1,72 @@
-import { Link } from "gatsby"
 import React from "react"
+import { Link } from "gatsby"
+import { slide as Menu } from 'react-burger-menu'
+import { ReactComponent as MenuIcon } from "./graphics/menu-icon.svg"
 
 import "../styles/styles.scss"
 
-function navigationHandler(elementId){
-	return () => {
-		const el = document.querySelector(`#${elementId}`)
-		if(el) el.scrollIntoView()
+
+class Navbar extends React.Component {
+	constructor (props) {
+		super(props)
+		this.state = {
+			menuOpen: false
+		}
+	}
+
+  // This keeps your state in sync with the opening/closing of the menu
+  // via the default means, e.g. clicking the X, pressing the ESC key etc.
+	handleStateChange (state) {
+		this.setState({menuOpen: state.isOpen})  
+	}
+
+  // This can be used to close the menu, e.g. when a user clicks a menu item
+	closeMenu () {
+		this.setState({menuOpen: false})
+	}
+
+  // This can be used to toggle the menu, e.g. when using a custom icon
+  // Tip: You probably want to hide either/both default icons if using a custom icon
+  // See https://github.com/negomi/react-burger-menu#custom-icons
+	toggleMenu () {
+		this.setState(state => ({menuOpen: !state.menuOpen}))
+	}
+
+	renderSections(sections){
+		if(this.props.sections) return this.props.sections.map((section) => 
+			<div
+				className="menu-item"
+				onClick={this.navigationHandler(section.id)}
+				key={section.id}
+			>
+				{section.title}
+			</div>
+		);
+	}
+
+	navigationHandler(elementId){
+		return () => {
+			const el = document.querySelector(`#${elementId}`)
+			if(el) el.scrollIntoView()
+			this.closeMenu()
+		}
+	}
+
+	render () {
+		return (
+			<div>
+				<Menu 
+					isOpen={this.state.menuOpen}
+					onStateChange={(state) => this.handleStateChange(state)}
+					disableAutoFocus
+					itemListElement="div"
+				>
+					{this.renderSections()}
+				</Menu>
+			</div>
+		)
 	}
 }
 
-function renderSections(sections){
-	if(sections) return sections.map((section) => 
-		<div
-			className="menu-item"
-			onClick={navigationHandler(section.id)}
-			key={section.id}
-		>
-			{section.title}
-		</div>
-	);
-}
-
-const Navbar = ({sections}) => (
-	<div className="navbar-container">
-		<div className="navbar-inner-container">
-			{/* <div className="menu-item" onClick={navigationHandler("Top")}> */}
-			{/* 	Top */}
-			{/* </div> */}
-			{/* <div className="menu-item" onClick={navigationHandler("AboutMe")}> */}
-			{/* 	About Me */}
-			{/* </div> */}
-			{/* <div className="menu-item" onClick={navigationHandler("Software")}> */}
-			{/* 	Software */}
-			{/* </div> */}
-			{/* <div className="menu-item" onClick={navigationHandler("Music")}> */}
-			{/* 	Music */}
-			{/* </div> */}
-			{renderSections(sections)}
-		</div>
-	</div>
-)
 
 export default Navbar
