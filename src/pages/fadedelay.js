@@ -25,7 +25,7 @@ const FadeDelayPage = ({data}) => (
 			<div className="main-page-title">
 				<span className="title-text">FADE DELAY</span>
 			</div>
-			<div className="main-page-subtitle">Spatial echo FX for fading sounds into space.</div>
+			<div className="main-page-subtitle">Make your sounds echo into space.</div>
 			<div className="faded-image-container">
 				<div className="fade" />
 				<div className="animation-line one"/>

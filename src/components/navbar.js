@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { slide as Menu } from 'react-burger-menu'
-import { ReactComponent as MenuIcon } from "./graphics/menu-icon.svg"
+import MenuIcon from "./graphics/menu-icon-component"
 
 import "../styles/styles.scss"
 
@@ -14,13 +14,12 @@ class Navbar extends React.Component {
 		}
 	}
 
-  // This keeps your state in sync with the opening/closing of the menu
+  // keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
 	handleStateChange (state) {
 		this.setState({menuOpen: state.isOpen})  
 	}
 
-  // This can be used to close the menu, e.g. when a user clicks a menu item
 	closeMenu () {
 		this.setState({menuOpen: false})
 	}
@@ -60,6 +59,7 @@ class Navbar extends React.Component {
 					onStateChange={(state) => this.handleStateChange(state)}
 					disableAutoFocus
 					itemListElement="div"
+					customBurgerIcon={<MenuIcon />}
 				>
 					{this.renderSections()}
 				</Menu>
