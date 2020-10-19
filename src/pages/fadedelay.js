@@ -19,7 +19,7 @@ const sections = [
 ]
 
 const FadeDelayPage = ({data}) => (
-	<Layout sections={sections}>
+	<Layout sections={sections} particles="stars">
 		<SEO title="Fade Delay" />
 		<div className="main-page-outer">
 			<div className="main-page-title">

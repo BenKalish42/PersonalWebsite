@@ -21,10 +21,10 @@ const sections = [
 ]
 
 const IndexPage = () => (
-  <Layout sections={sections}>
+  <Layout sections={sections} particles="webs">
     <SEO title="Home" />
     <TitleSection />
-    <AboutMeSection />
+    {/* <AboutMeSection /> */}
     <ProjectsSection />
     <MusicSection />
     {/* <div className="section-container" style={{...exampleSectionStyle, color: "green"}} id="section3"> */}
@@ -35,8 +35,3 @@ const IndexPage = () => (
 
 export default IndexPage
 
-// {["red", "blue", "green"].forEach((color, section) => (
-//       <div style={{height: 1920, width:1080, background: color, textAlign: "center", verticalAlign: "center"}}>
-//         <span style={{fontSize: 96}}>SECTION {section}</span>
-//       </div>
-//       ))}

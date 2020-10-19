@@ -3,30 +3,6 @@
   src: local("Inception"), url('../fonts/Inception.ttf') format("truetype");
 }
 
-@font-face {
-  font-family: "Futura Condensed";
-  src: local("FuturaCondensedMedium"), url('../fonts/FuturaCondensedMedium.ttf') format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Futura Condensed";
-  src: local("FuturaCondensedBold"), url('../fonts/FuturaCondensedBold.ttf') format("truetype");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Futura Book";
-  src: local("FuturaBook"), url('../fonts/FuturaBook.ttf') format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura Book";
-  src: local("FuturaBookItalic"), url('../fonts/FuturaBookItalic.ttf') format("truetype");
-  font-style: italic;
-}
-
 $fdblue: rgb(0, 50, 242);
 
 html {
@@ -188,7 +164,10 @@ html {
 	align-items: center;
 	width: 100%;
 
-	margin: 30px 0;
+	padding: 30px 0;
+    max-width: 1200px;
+    background: black;
+    z-index: 3;
 }
 
 .main-section-title {

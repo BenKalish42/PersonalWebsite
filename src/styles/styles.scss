@@ -1,10 +1,45 @@
 /*
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
-* @Last Modified by:   benjaminkalish
-* @Last Modified time: 2020-10-12 19:19:50
+* @Last Modified by:   BenKalish42
+* @Last Modified time: 2020-10-18 23:19:00
 */
 
+@font-face {
+  font-family: "Teko";
+  src: url('../fonts/Teko-Regular.ttf') format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Teko";
+  src: url('../fonts/Teko-Medium.ttf') format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Futura Condensed";
+  src: local("FuturaCondensedMedium"), url('../fonts/FuturaCondensedMedium.ttf') format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Futura Condensed";
+  src: local("FuturaCondensedBold"), url('../fonts/FuturaCondensedBold.ttf') format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Futura Book";
+  src: local("FuturaBook"), url('../fonts/FuturaBook.ttf') format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Book";
+  src: local("FuturaBookItalic"), url('../fonts/FuturaBookItalic.ttf') format("truetype");
+  font-style: italic;
+}
 
 // Fluid Type responsive font-sizes and properties from Indrek Paas
 // changed to include default viewport width range of a small phone to a 4k monitor
@@ -46,12 +81,23 @@ html, body {
 
 body {
   position: relative;
+  font-family: "Futura Book";
 }
 
 
 div[class*="container"] {
 	display: flex;
 	flex-direction: column;
+}
+
+#tsparticles {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	opacity: 30%;
 }
 
 /* Position and sizing of burger button */
@@ -206,7 +252,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	position: relative;
 	align-items: center;
 	justify-content: center;
-	background: black;
+	// background: black;
 	width: 100%;
 	overflow: hidden;
 	margin: 72px 0;
@@ -243,17 +289,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 	.overlay-top {
 		top: 0;
-		background: linear-gradient(rgba(0, 0, 0, 1), 70%, rgba(0, 0, 0, 0));
+		// background: linear-gradient(rgba(0, 0, 0, 1), 70%, rgba(0, 0, 0, 0));
 		height: 40%;
 	}
 
 	.overlay-bottom {
 		bottom: 0;
-		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+		// background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 		height: 70%;
 	}
 
 	.section-title{
+		font-family: "Futura Condensed";
 		z-index: 1;
 		color: white;
 		line-height: 100%;
@@ -286,7 +333,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	position: relative;
 	align-items: center;
 	justify-content: center;
-	background: black;
+	// background: black;
 	width: 100%;
 	overflow: hidden;
 }
@@ -305,11 +352,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	}
 
 	.name {
-		@include fluid-type(font-size, 24px, 144px);
+		@include fluid-type(font-size, 72px, 144px);
 		font-weight: 600;
 	}
 	.description {
-		@include fluid-type(font-size, 8px, 48px);
+		@include fluid-type(font-size, 24px, 48px);
 	}
 }
 
@@ -343,6 +390,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	}
 }
 
+.project-boxes-container {
+	flex-direction: row !important;
+	flex-wrap: wrap;
+	max-width: 100%;
+	justify-content: center;
+}
+
 .project-container {
 	align-items: center;
 	justify-content: center;
@@ -353,6 +407,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 	height: 300px;
 	max-width: 800px;
+	min-width: 300px;
+
+	flex-grow: 1;
 
 	background: linear-gradient(45deg,
 			// rgb(75, 180, 225), 2%,
@@ -361,8 +418,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			rgb(189, 7, 89),
 			rgb(219, 112, 32));
 
+	@media screen and (max-width: 500px) {
+		margin: 20px 0;
+	}
+
 	.project-inner-container {
 		height: 100%;
+		width: calc(100% - 6px);
 		margin: 3px;
 		align-items: center;
 		justify-content: flex-start;
@@ -396,8 +458,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
 				align-items: flex-start;
 				justify-content: center;
 				margin-left: 20px;
+				width: 100%;
+
+				.project-title-container {
+					flex-direction: row !important;
+					width: 100%;
+					align-items: center;
+				}
 
 				.title {
+					font-family: "Futura Condensed";
 					font-size: 48px;
 					font-weight: bold;
 					line-height: 48px;
@@ -409,6 +479,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 					line-height: 24px;
 					margin-top: 4px;
 				}
+
+				.technologies {
+					font-size: 20px;
+					color: #dddddd;
+					font-style: italic;
+				}
 			}
 
 			.arrow-container {
@@ -419,7 +495,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 				// TODO: think about switching to pos abs
 				margin-right: 20px;
-				margin-top: 15px;
 				transition: margin-right 50ms ease;
 
 				// .arrow-icon {
@@ -435,6 +510,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			justify-content: center;
 			overflow: hidden;
 
+			@media screen and (max-width: 500px) {
+				display: none;
+			}
+
 			.description {
 				font-size: 24px;
 				line-height: 24px;
@@ -444,22 +523,31 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	}
 }
 
+.project-icon {
+	width: 72px;
+	height: 72px;
+}
+
 .music-section-container {
-	flex-direction: row!important;
+	flex-direction: row !important;
+	flex-wrap: wrap;
 	width: 100%;
 	justify-content: space-between;
 }
 
 .music-subsection-container {
-	width: 46%;
+	min-width: 300px;
+	flex-grow: 1;
+	margin: 0 20px;
 }
 
 .music-section-title {
+	font-family: "Futura Condensed";
 	color: white;
 	line-height: 100%;
 	text-align: center;
 	text-shadow: 0 6px 6px #000000;
-	font-size: 72px;
+	font-size: 64px;
 	font-weight: 600;
 	margin: 24px 0;
 }
