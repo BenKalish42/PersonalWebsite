@@ -44,7 +44,7 @@ const ProjectsSection = () => {
 
 	return(
 		<SectionLayout sectionTitle="Software">
-			<div className="project-boxes-grid">
+			<div className="project-boxes-container">
 				<Project projectData={projectData["fadeDelay"]}>
 					<Image fluid={data.fadeIcon.childImageSharp.fluid} className="project-icon"/>
 				</Project>

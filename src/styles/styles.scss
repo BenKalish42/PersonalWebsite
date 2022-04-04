@@ -2,7 +2,7 @@
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
 * @Last Modified by:   BenKalish42
-* @Last Modified time: 2020-10-18 23:19:00
+* @Last Modified time: 2022-04-04 12:26:29
 */
 
 @font-face {
@@ -310,6 +310,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		font-weight: 600;
 		margin-top: 24px;
 
+		@media screen and (max-width: 500px) {
+			font-size: 56px;
+		}
+
 	}
 
 	.section-content-container {
@@ -361,7 +365,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .title-graphic {
-	width: 60%;
+	max-width: 1200px;
 }
 
 .about-me-section-container {
@@ -381,7 +385,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	.about-me-text-container {
 		flex-grow: 3;
 		flex-basis: 0;
-		min-width: 500px;
 		padding: 20px;
 
 		.about-me-text {
@@ -420,14 +423,24 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 	@media screen and (max-width: 500px) {
 		margin: 20px 0;
+		height: auto;
 	}
 
-	.project-inner-container {
+	.project-inner-grid {
+		display: grid;
+		grid-template-columns: 72px 1fr 58px;
+		grid-template-rows: 48px 28px 24px 1fr;
+		grid-template-areas: 
+		"icon title arrow"
+		"icon tagline tagline"
+		"icon technologies technologies"
+		"description description description";
+		grid-column-gap: 12px;
+		align-items: start;
+
 		height: 100%;
 		width: calc(100% - 6px);
 		margin: 3px;
-		align-items: center;
-		justify-content: flex-start;
 		background: linear-gradient(90deg, #101010, #202020, #101010);
 		overflow: hidden;
 
@@ -436,76 +449,106 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		color: #ffffff;
 		cursor: pointer;
 
+		@media screen and (max-width: 500px) {
+			grid-template-columns: 58px auto 30px;
+			grid-template-rows: auto auto auto;
+			grid-template-areas: 
+			"icon title arrow"
+			"tagline tagline tagline"
+			"technologies technologies technologies";
+			grid-column-gap: 0px;
+			grid-row-gap: 3px;
+
+			padding: 16px;
+		}
+
 		&:hover .arrow-container {
 
-			margin-right: 10px!important;
+			padding-right: 0!important;
 		}
 
-		.header-container {
-			flex-direction: row;
+		.icon-container {
 			align-items: center;
-			justify-content: flex-start;
-			width: 100%;
+			justify-content: center;
+			grid-area: icon;
+			align-self: center;
 
-			margin-bottom: 20px;
-
-			.icon-container {
-				align-items: center;
-				justify-content: center;
-			}
-
-			.project-info-container {
-				align-items: flex-start;
-				justify-content: center;
-				margin-left: 20px;
-				width: 100%;
-
-				.project-title-container {
-					flex-direction: row !important;
-					width: 100%;
-					align-items: center;
-				}
-
-				.title {
-					font-family: "Futura Condensed";
-					font-size: 48px;
-					font-weight: bold;
-					line-height: 48px;
-
-				}
-
-				.tagline, .technologies {
-					font-size: 24px;
-					line-height: 24px;
-					margin-top: 4px;
-				}
-
-				.technologies {
-					font-size: 20px;
-					color: #dddddd;
-					font-style: italic;
-				}
-			}
-
-			.arrow-container {
-
-				// This moves the arrow to the right, as there is no justify-self in flex
-				margin-left: auto;
-				align-self: flex-start;
-
-				// TODO: think about switching to pos abs
-				margin-right: 20px;
-				transition: margin-right 50ms ease;
-
-				// .arrow-icon {
-				// 	margin-left: 0;
-				// 	transition: margin-left 200ms;
-				// }
-
+			@media screen and (max-width: 500px) {
+				margin-right: 12px;
 			}
 		}
+
+
+		.title {
+			font-family: "Futura Condensed";
+			font-size: 48px;
+			font-weight: bold;
+			line-height: 48px;
+			grid-area: title;
+
+			@media screen and (max-width: 500px) {
+				font-size: 24px;
+				align-self: center;
+			}
+
+		}
+
+		.tagline, .technologies {
+			font-size: 24px;
+			line-height: 24px;
+			margin-top: 4px;
+		}
+
+		.tagline {
+			grid-area: tagline;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space:nowrap;
+
+			@media screen and (max-width: 500px) {
+				font-size: 16px;
+				white-space: initial;
+			}
+		}
+
+		.technologies {
+			font-size: 20px;
+			color: #dddddd;
+			font-style: italic;
+			grid-area: technologies;
+
+			@media screen and (max-width: 500px) {
+				font-size: 16px;
+				white-space: initial;
+			}
+		}
+
+		.arrow-container {
+			grid-area: arrow;
+
+			// This moves the arrow to the right, as there is no justify-self in flex
+			margin-left: auto;
+			align-self: flex-start;
+
+			padding-right: 10px;
+			transition: padding-right 50ms ease;
+
+			@media screen and (max-width: 500px) {
+				align-self: center;
+				padding-right: 0;
+
+				.arrow-icon {
+					height: auto;
+					width: 30px;
+				}
+			}
+		}
+
 
 		.description-container {
+			grid-area: description;
+			align-self: center;
+
 			align-items: center;
 			justify-content: center;
 			overflow: hidden;
@@ -515,7 +558,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			}
 
 			.description {
-				font-size: 24px;
+				font-size: 20px;
 				line-height: 24px;
 				height: 100%;
 			}
@@ -526,6 +569,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .project-icon {
 	width: 72px;
 	height: 72px;
+
+	@media screen and (max-width: 500px) {
+		width: 48px;
+		height: 48px;
+	}
 }
 
 .music-section-container {
@@ -539,6 +587,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	min-width: 300px;
 	flex-grow: 1;
 	margin: 0 20px;
+
+	@media screen and (max-width: 375px) {
+		margin: 0;
+	}
 }
 
 .music-section-title {
@@ -548,6 +600,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	text-align: center;
 	text-shadow: 0 6px 6px #000000;
 	font-size: 64px;
-	font-weight: 600;
+	font-weight: 500;
 	margin: 24px 0;
+
+	@media screen and (max-width: 500px) {
+		font-size: 48px;
+	}
 }

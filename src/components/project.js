@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactFitText from 'react-fittext'
 
 import "../styles/styles.scss"
 
@@ -14,26 +15,28 @@ const navigateOutHandler = (link) => {
 
 const Project = ({projectData, children}) => (
 	<div className="project-container">
-		<div className="project-inner-container" onClick={navigateOutHandler(projectData.link)}>
-			<div className="header-container">
+		<div className="project-inner-grid" onClick={navigateOutHandler(projectData.link)}>
+			{/* <div className="header-container"> */}
 				<div className="icon-container">
 					{children}
 				</div>
-				<div className="project-info-container">
-					<div className="project-title-container">
-						<span className="title">{projectData.name}</span>
+				{/* <div className="project-info-container"> */}
+					{/* <div className="project-title-container"> */}
+						{/* <ReactFitText compressor={0.6}> */}
+							<span className="title">{projectData.name}</span>
+						{/* </ReactFitText> */}
 						<div className="arrow-container">
 							<svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
 						</div>
-					</div>
+					{/* </div> */}
 					<span className="tagline">
 						{projectData.tagline}
 					</span>
 					<span className="technologies">
 						{projectData.technologies}
 					</span>
-				</div>
-			</div>
+				{/* </div> */}
+			{/* </div> */}
 			<div className="description-container">
 				<span className="description">
 					{projectData.description}
