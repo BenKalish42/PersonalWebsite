@@ -11,7 +11,7 @@ const ProjectsSection = () => (
 		<div className="about-me-section-container">
 			<div className="about-me-text-container">
 				<span className="about-me-text">
-					About Me blurb will go here, Vada. The following is just filler text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare nisi sed ultricies congue. Maecenas sed auctor ex. Vivamus pulvinar, diam a euismod posuere, lacus velit vestibulum orci, nec ultricies lectus lorem vitae nulla. Mauris sit amet luctus diam, in venenatis ex. Mauris dolor nibh, iaculis eu magna vitae, euismod aliquam massa. Praesent fermentum mauris mattis lacus ornare, et porttitor felis cursus. Mauris mattis augue eu neque porttitor luctus. Proin vitae lorem dolor. Praesent facilisis fringilla leo, non cursus metus hendrerit ultricies. Morbi vel elit nec nibh interdum ornare blandit et massa.
+					Hey. I’m Ben. I’m a software engineer and musician.  I value simplicity, ingenuity, and compassion. I enjoy writing efficient software that just works, and inventing tools for unique and specific use-cases. I’m passionate about light, clean web design, and software that helps musicians do things in creative and innovative ways. When I’m not clicking and clacking, you can find me making music, doing yoga, studying Torah, or concocting one of my <i>world-renowned</i> cocktails or stews. 
 				</span>
 			</div>
 			<div className="about-me-photo-container">

@@ -24,7 +24,7 @@ const IndexPage = () => (
   <Layout sections={sections} particles="webs">
     <SEO title="Home" />
     <TitleSection />
-    {/* <AboutMeSection /> */}
+    <AboutMeSection />
     <ProjectsSection />
     <MusicSection />
     {/* <div className="section-container" style={{...exampleSectionStyle, color: "green"}} id="section3"> */}

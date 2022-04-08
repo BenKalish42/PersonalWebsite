@@ -2,7 +2,7 @@
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
 * @Last Modified by:   BenKalish42
-* @Last Modified time: 2022-04-04 12:26:29
+* @Last Modified time: 2022-04-08 13:27:07
 */
 
 @font-face {
@@ -97,7 +97,7 @@ div[class*="container"] {
 	height: 100%;
 	width: 100%;
 	z-index: 2;
-	opacity: 30%;
+	opacity: 30%!important;
 }
 
 /* Position and sizing of burger button */
@@ -256,6 +256,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	width: 100%;
 	overflow: hidden;
 	margin: 72px 0;
+
+	@media screen and (max-width: 500px) {
+		margin: 12px 0;
+	}
 
 	.section-graphic {
 		// can extend width past 100 and change left for different graphic flavor
