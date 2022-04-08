@@ -2,7 +2,7 @@
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
 * @Last Modified by:   BenKalish42
-* @Last Modified time: 2022-04-08 13:27:07
+* @Last Modified time: 2022-04-08 14:56:27
 */
 
 @font-face {
@@ -97,7 +97,7 @@ div[class*="container"] {
 	height: 100%;
 	width: 100%;
 	z-index: 2;
-	opacity: 30%!important;
+	opacity: 0.3;
 }
 
 /* Position and sizing of burger button */
@@ -393,6 +393,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 		.about-me-text {
 			color: #FFFFFF;
+			font-size: 24px;
 		}
 	}
 }

@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Particles from 'react-particles-js'
+import Particles from 'react-tsparticles'
 import particlesConfigWebs from '../helpers/particles-config-webs.json'
 import particlesConfigStars from '../helpers/particles-config-stars.json'
 
