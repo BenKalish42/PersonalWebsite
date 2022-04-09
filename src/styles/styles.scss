@@ -2,20 +2,34 @@
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
 * @Last Modified by:   BenKalish42
-* @Last Modified time: 2022-04-08 14:56:27
+* @Last Modified time: 2022-04-09 16:53:21
 */
 
+@use "sass:math";
+
 @font-face {
-  font-family: "Teko";
-  src: url('../fonts/Teko-Regular.ttf') format("truetype");
-  font-weight: 400;
+  font-family: "Bebas Neue";
+  src: url('../fonts/BebasNeue-Regular.ttf') format("truetype");
+  font-weight: normal;
 }
 
 @font-face {
-  font-family: "Teko";
-  src: url('../fonts/Teko-Medium.ttf') format("truetype");
-  font-weight: 500;
+  font-family: "Anton";
+  src: url('../fonts/Anton-Regular.ttf') format("truetype");
+  font-weight: normal;
 }
+
+// @font-face {
+//   font-family: "Teko";
+//   src: url('../fonts/Teko-Regular.ttf') format("truetype");
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: "Teko";
+//   src: url('../fonts/Teko-Medium.ttf') format("truetype");
+//   font-weight: 500;
+// }
 
 @font-face {
   font-family: "Futura Condensed";
@@ -65,7 +79,7 @@
 
 @function strip-unit($number) {
   @if type-of($number) == "number" and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, $number * 0 + 1);
   }
 
   @return $number;
@@ -314,9 +328,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		font-weight: 600;
 		margin-top: 24px;
 
-		@media screen and (max-width: 500px) {
-			font-size: 56px;
-		}
+		// @media screen and (max-width: 500px) {
+		// 	font-size: 56px;
+		// }
+		@include fluid-type(font-size, 48px, 96px);
 
 	}
 
@@ -351,7 +366,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	top: 45%;
 
 	color: white;
-	font-family: 'Teko', sans-serif;
 
 	span {
 		line-height: 100%;
@@ -361,10 +375,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 	.name {
 		@include fluid-type(font-size, 72px, 144px);
-		font-weight: 600;
+		font-family: 'Anton';
+		font-weight: normal;
 	}
 	.description {
 		@include fluid-type(font-size, 24px, 48px);
+		font-family: "Futura Condensed";
+		font-weight: 600;
 	}
 }
 
@@ -393,7 +410,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 		.about-me-text {
 			color: #FFFFFF;
-			font-size: 24px;
+			@include fluid-type(font-size, 16px, 24px);
+			min-width: 320px;
 		}
 	}
 }
@@ -491,8 +509,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			line-height: 48px;
 			grid-area: title;
 
+			@include fluid-type(font-size, 24px, 48px);
+
 			@media screen and (max-width: 500px) {
-				font-size: 24px;
 				align-self: center;
 			}
 
@@ -604,11 +623,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	line-height: 100%;
 	text-align: center;
 	text-shadow: 0 6px 6px #000000;
-	font-size: 64px;
-	font-weight: 500;
+	font-weight: 600;
 	margin: 24px 0;
-
-	@media screen and (max-width: 500px) {
-		font-size: 48px;
-	}
+	@include fluid-type(font-size, 36px, 48px);
 }

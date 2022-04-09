@@ -11,7 +11,7 @@ const TitleSection = (props) => {
 					BEN KALISH
 				</span>
 				<span className="description">
-					Developer & DJ
+					Engineer & Musician
 				</span>
 			</div>
 			<TitleGraphic className="title-graphic"/>
