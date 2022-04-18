@@ -2,7 +2,7 @@
 * @Author: Ben Kalish
 * @Date:   2020-08-04 16:06:51
 * @Last Modified by:   BenKalish42
-* @Last Modified time: 2022-04-09 16:53:21
+* @Last Modified time: 2022-04-17 22:38:52
 */
 
 @use "sass:math";
@@ -269,11 +269,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	// background: black;
 	width: 100%;
 	overflow: hidden;
-	margin: 72px 0;
+	margin: 6vw 0;
 
-	@media screen and (max-width: 500px) {
-		margin: 12px 0;
-	}
+	// @media screen and (max-width: 500px) {
+	// 	margin: 12px 0;
+	// }
 
 	.section-graphic {
 		// can extend width past 100 and change left for different graphic flavor
@@ -342,7 +342,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		width: 90%;
 		// TODO: make this fluid? how should content container scale?
 		// max-height: 1080px;
-		margin: 40px auto;
+		margin: 4vw auto;
 	}
 
 	@media screen and (min-width: 890px) {
@@ -395,6 +395,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	flex-direction: row!important;
 	flex-wrap: wrap;
 	overflow: hidden; 
+	width: 100%;
 
 	// TODO: use flex-grow with these guys to maintain proportions as we scale
 	.about-me-photo-container {
@@ -406,12 +407,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	.about-me-text-container {
 		flex-grow: 3;
 		flex-basis: 0;
-		padding: 20px;
+		padding: 0 20px 20px; 
+		width: 100%;
+
+		@media screen and (min-width: 280px) {
+			min-width: 320px;
+		}
 
 		.about-me-text {
 			color: #FFFFFF;
 			@include fluid-type(font-size, 16px, 24px);
-			min-width: 320px;
 		}
 	}
 }
@@ -479,6 +484,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			"icon title arrow"
 			"tagline tagline tagline"
 			"technologies technologies technologies";
+			// "description description description";
 			grid-column-gap: 0px;
 			grid-row-gap: 3px;
 
@@ -509,7 +515,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			line-height: 48px;
 			grid-area: title;
 
-			@include fluid-type(font-size, 24px, 48px);
+			@include fluid-type(font-size, 28px, 48px);
 
 			@media screen and (max-width: 500px) {
 				align-self: center;
@@ -518,7 +524,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		}
 
 		.tagline, .technologies {
-			font-size: 24px;
+			// font-size: 24px;
 			line-height: 24px;
 			margin-top: 4px;
 		}
@@ -529,20 +535,24 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			text-overflow: ellipsis;
 			white-space:nowrap;
 
+			@include fluid-type(font-size, 16px, 24px);
+
 			@media screen and (max-width: 500px) {
-				font-size: 16px;
+				// font-size: 16px;
 				white-space: initial;
 			}
 		}
 
 		.technologies {
-			font-size: 20px;
+			// font-size: 20px;
 			color: #dddddd;
 			font-style: italic;
 			grid-area: technologies;
 
+			@include fluid-type(font-size, 16px, 20px);
+
 			@media screen and (max-width: 500px) {
-				font-size: 16px;
+				// font-size: 16px;
 				white-space: initial;
 			}
 		}
@@ -582,7 +592,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 			}
 
 			.description {
-				font-size: 20px;
+				@include fluid-type(font-size, 16px, 20px);
 				line-height: 24px;
 				height: 100%;
 			}

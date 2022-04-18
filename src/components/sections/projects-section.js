@@ -10,7 +10,7 @@ const projectData = {
 		name: "Fade Delay",
 		tagline: "Make your sounds echo into space",
 		technologies: "C++, JUCE",
-		description: "Fade Delay is a standard audio delay plugin built around a unique feature: The ability to decrease the stereo width of the echoes as they repeat. This is designed to create the perception that the listener and the source are moving further away from each other in space.....",
+		description: "Fade Delay is a standard audio delay plugin built around a unique feature: The ability to decrease the stereo width of the echoes as they repeat. This is designed to create the perception that the listener and the source are moving further away from each other in space.",
 		link: "/fadedelay"
 	},
 	keyshift: {

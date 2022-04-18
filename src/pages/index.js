@@ -16,7 +16,7 @@ import "../styles/styles.scss"
 const sections = [
     {title: "Top", id: "Top"},
     {title: "About Me", id: "AboutMe"},
-    {title: "Projects", id: "Projects"},
+    {title: "Software", id: "Software"},
     {title: "Music", id: "Music"},
 ]
 
