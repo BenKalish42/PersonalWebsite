@@ -229,15 +229,18 @@ const FadeDelayPage = ({data}) => (
 					<div className="main-section-title">Installation</div>
 					<div className="main-section-content">
 						<div className="main-section-subtitle">Installers</div>
+						{/* <p> */}
+						{/* 	v0.3.1: */}
+						{/* </p> */}
+						{/* <a className="installer-link" href="https://github.com/BenKalish42/FadeDelay/releases/download/v0.3.1/FadeDelay0.3.1.pkg" target="_blank">Download Installer for Mac OS (VST3, AU)</a> */}
 						<p>
-							v0.3.1:
+							This plugin is currently in alpha. Please <a href="mailto:benjaminskalish@gmail.com">contact me</a> if you'd like to be a tester. 
 						</p>
-						<a className="installer-link" href="https://github.com/BenKalish42/FadeDelay/releases/download/v0.3.1/FadeDelay0.3.1.pkg" target="_blank">Download Installer for Mac OS (VST3, AU)</a>
-						<div className="main-section-subtitle">Source</div>
-						<p>
-							This plugin was built in C++ atop the JUCE framework. The source code will be available for a limited time on GitHub. 
-						</p>
-						<a className="installer-link" href="https://github.com/BenKalish42/FadeDelay" target="_blank">View Code on GitHub</a>
+						{/* <div className="main-section-subtitle">Source</div> */}
+						{/* <p> */}
+						{/* 	This plugin was built in C++ atop the JUCE framework. The source code will be available for a limited time on GitHub.  */}
+						{/* </p> */}
+						{/* <a className="installer-link" href="https://github.com/BenKalish42/FadeDelay" target="_blank">View Code on GitHub</a> */}
 					</div>
 				</div>
 			</div>
