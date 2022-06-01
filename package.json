@@ -30,7 +30,7 @@
     "react-scroll-to": "^3.0.0-beta.6",
     "react-tsparticles": "^1.43.1",
     "sass": "^1.49.9",
-    "sharp": "^0.30.3",
+    "sharp": "^0.30.5",
     "stable": "^0.1.8"
   },
   "devDependencies": {
