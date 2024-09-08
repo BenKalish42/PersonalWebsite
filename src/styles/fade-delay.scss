@@ -236,14 +236,30 @@ p, .example-label, .example-sublabel {
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
-	width: 100%;
+	width: 50%;
 	padding-left: 22px;
 	// margin-bottom: 50px;
 }
 
+.examples-container {
+	display: flex;
+	flex-direction: row!important;
+	align-self: flex-start;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.example-container-container {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	width: 100%;
+	padding: 10px;
+}
+
 .example-audio-container {
 	display: flex;
-	width: 50%;
+	width: 100%;
 }
 
 .installer-link {

@@ -14,7 +14,7 @@ const sections = [
 	{title: "About", id: "about"},
 	{title: "Controls", id: "controls"},
 	{title: "Modes", id: "modes"},
-	{title: "Styles", id: "styles"},
+	// {title: "Styles", id: "styles"},
 	{title: "Installation", id: "install"},
 ]
 
@@ -57,79 +57,92 @@ const FadeDelayPage = ({data}) => (
 							Fade Delay can and does function as a normal delay when the Width Decay parameter is turned to 0. Turning the Width Decay knob up a bit is when things start to fade. 
 						</p>
 						<p>This is a stereo effect, so put your headphones on 🎧 to hear the difference.</p>
+						<div className="examples-container">
 
-						<span className="example-label">• A wide shaker sound in Straight mode</span>
-						<div className="example-container">
-							<span className="example-sublabel">Normal Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630243%3Fsecret_token%3Ds-tfU39lxyVpH&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
+							<div className="example-container-container">
+								<span className="example-label">• A wide shaker sound in Straight mode</span>
+								<div className="example-container">
+									<span className="example-sublabel">Normal Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630243%3Fsecret_token%3Ds-tfU39lxyVpH&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+									<span className="example-sublabel">Fade Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630231%3Fsecret_token%3Ds-AVo4w9cypKK&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+								</div>
 							</div>
-							<span className="example-sublabel">Fade Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630231%3Fsecret_token%3Ds-AVo4w9cypKK&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
+
+							<div className="example-container-container">
+								<span className="example-label">• Guitar panned left, piano panned right in Straight mode</span>
+								<div className="example-container">
+									<span className="example-sublabel">Normal Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630222%3Fsecret_token%3Ds-1bqRMCp1lJX&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+									<span className="example-sublabel">Fade Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630201%3Fsecret_token%3Ds-tZSEa9vbFm6&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+								</div>
+							</div>
+
+							<div className="example-container-container">
+								<span className="example-label">• Guitar panned left, flipping back and forth in Flip-Flop Mode</span>
+								<div className="example-container">
+									<span className="example-sublabel">Normal Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630162%3Fsecret_token%3Ds-Jds0Q59BpDg&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+									<span className="example-sublabel">Fade Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630153%3Fsecret_token%3Ds-naLa7C0ga3W&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+								</div>
+							</div>
+
+							<div className="example-container-container">
+								<span className="example-label">• Guitar and Piano spinning around each other in Flip-Flop Mode</span>
+								<div className="example-container">
+									<span className="example-sublabel">Normal Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630183%3Fsecret_token%3Ds-6XdXmOIH7oG&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+									<span className="example-sublabel">Fade Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630171%3Fsecret_token%3Ds-pVu3MeVRiQC&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+								</div>
+							</div>
+
+							<div className="example-container-container">
+								<span className="example-label">• A trancey pluck sound in Ping-Pong Mode</span>
+								<div className="example-container">
+									<span className="example-sublabel">Normal Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630138%3Fsecret_token%3Ds-V6VutDS7O4U&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+									<span className="example-sublabel">Fade Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630123%3Fsecret_token%3Ds-E4gPiQHMrLu&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+								</div>
+							</div>
+
+							<div className="example-container-container">
+								<span className="example-label">• A trancey pluck sound playing multiple times in Ping-Pong Mode</span>
+								<div className="example-container">
+									<span className="example-sublabel">Normal Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630105%3Fsecret_token%3Ds-bj6LKf1a3hQ&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+									<span className="example-sublabel">Fade Delay</span>
+									<div className="example-audio-container">
+										<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630087%3Fsecret_token%3Ds-m6tCBLWLSZ4&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
+									</div>
+								</div>
 							</div>
 						</div>
-
-						<span className="example-label">• Guitar panned left, piano panned right in Straight mode</span>
-						<div className="example-container">
-							<span className="example-sublabel">Normal Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630222%3Fsecret_token%3Ds-1bqRMCp1lJX&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-							<span className="example-sublabel">Fade Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630201%3Fsecret_token%3Ds-tZSEa9vbFm6&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-						</div>
-
-						<span className="example-label">• Guitar panned left, flipping back and forth in Flip-Flop Mode</span>
-						<div className="example-container">
-							<span className="example-sublabel">Normal Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630162%3Fsecret_token%3Ds-Jds0Q59BpDg&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-							<span className="example-sublabel">Fade Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630153%3Fsecret_token%3Ds-naLa7C0ga3W&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-						</div>
-
-						<span className="example-label">• Guitar and Piano spinning around each other in Flip-Flop Mode</span>
-						<div className="example-container">
-							<span className="example-sublabel">Normal Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630183%3Fsecret_token%3Ds-6XdXmOIH7oG&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-							<span className="example-sublabel">Fade Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630171%3Fsecret_token%3Ds-pVu3MeVRiQC&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-						</div>
-
-						<span className="example-label">• A trancey pluck sound in Ping-Pong Mode</span>
-						<div className="example-container">
-							<span className="example-sublabel">Normal Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630138%3Fsecret_token%3Ds-V6VutDS7O4U&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-							<span className="example-sublabel">Fade Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630123%3Fsecret_token%3Ds-E4gPiQHMrLu&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-						</div>
-
-						<span className="example-label">• A trancey pluck sound playing multiple times in Ping-Pong Mode</span>
-						<div className="example-container">
-							<span className="example-sublabel">Normal Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630105%3Fsecret_token%3Ds-bj6LKf1a3hQ&color=%23aaaaaa&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-							<span className="example-sublabel">Fade Delay</span>
-							<div className="example-audio-container">
-								<iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/904630087%3Fsecret_token%3Ds-m6tCBLWLSZ4&color=%230032f2&inverse=true&auto_play=false&show_user=false"></iframe>
-							</div>
-						</div>
-
 						<div className="main-section-subtitle">The Theory: Fading Through Narrowing</div>
 						<p>
 							Noisy things that are further away sound quieter than they would up close. This is intuitive; if we want to hear something better, we move closer to it. Even if we only had one ear, we could figure out how close we are to something based on how loud it is. But having two ears allows us to figure out another crucial piece of information about a sound: Location. 
@@ -177,6 +190,10 @@ const FadeDelayPage = ({data}) => (
 						<p>
 							How much of the delayed signal is fed back into itself. More feedback means the delayed signal hangs around longer — 100% feedback means the signal will echo at the same volume indefinitely. Smaller values mean the delayed signal will decrease in volume with each echo until it fades out. 
 						</p>
+						<div className="main-section-subtitle">Power Lock</div>
+						<p>
+							Locks the Feedback and Width Decay parameters together based on the <a href="https://www.youtube.com/watch?v=umTSWJ3POOk">Inverse Distance Law</a>, which keeps the loudness and stereo image of the echoes at the correct proportion based on the laws of physics.
+						</p>
 						<div className="main-section-subtitle">Width Decay</div>
 						<p>
 							How much narrower the signal gets with each repeat; this is the “Fade” in Fade Delay. At a value of 1, the first repeat is mono — as narrow as possible. Values below 0.40 will provide more of a natural fading effect, and higher values quickly squeeze sounds into the middle of the stereo spectrum. 
@@ -208,23 +225,23 @@ const FadeDelayPage = ({data}) => (
 						</p>
 						<div className="main-section-subtitle">Flip-Flop</div>
 						<p>
-							A copy of the signal is delayed and played back after the input signal, but the channels are flipped: Left becomes Right, Right becomes Left. If there is feedback, the channels will flop back when the signal is delayed again. 
+							A copy of the signal is delayed and played back after the input signal, but the channels are flipped: Left becomes Right, Right becomes Left. If there is feedback, the channels will flop back when the signal is delayed again, creating a "flip flopping" of the stereo image every echo. 
 						</p>
 					</div>
 				</div>
-				<div className="main-section-container" id="styles">
-					<div className="main-section-title">Styles</div>
-					<div className="main-section-content">
-						<div className="main-section-subtitle">Even</div>
-						<p>
-							Narrows width by redistributing information between the left and right channels. Echoes will incrementally approach the mono version of the signal.
-						</p>
-						<div className="main-section-subtitle">Mids</div>
-						<p>
-							Narrows width by rebalancing the mid and side channels of the signal. Echoes will incrementally approach the mids channel in a standard mid/side processor.
-						</p>
-					</div>
-				</div>
+				{/* <div className="main-section-container" id="styles"> */}
+				{/* 	<div className="main-section-title">Styles</div> */}
+				{/* 	<div className="main-section-content"> */}
+				{/* 		<div className="main-section-subtitle">Even</div> */}
+				{/* 		<p> */}
+				{/* 			Narrows width by redistributing information between the left and right channels. Echoes will incrementally approach the mono version of the signal. */}
+				{/* 		</p> */}
+				{/* 		<div className="main-section-subtitle">Mids</div> */}
+				{/* 		<p> */}
+				{/* 			Narrows width by rebalancing the mid and side channels of the signal. Echoes will incrementally approach the mids channel in a standard mid/side processor. */}
+				{/* 		</p> */}
+				{/* 	</div> */}
+				{/* </div> */}
 				<div className="main-section-container" id="install">
 					<div className="main-section-title">Installation</div>
 					<div className="main-section-content">

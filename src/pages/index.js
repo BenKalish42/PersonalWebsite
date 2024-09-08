@@ -27,9 +27,6 @@ const IndexPage = () => (
     <AboutMeSection />
     <ProjectsSection />
     <MusicSection />
-    {/* <div className="section-container" style={{...exampleSectionStyle, color: "green"}} id="section3"> */}
-    {/*   <span style={{fontSize: 96}}>SECTION 3</span> */}
-    {/* </div> */}
   </Layout>
 )
 

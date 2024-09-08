@@ -39,14 +39,14 @@ const Layout = ({ children, sections, particles }) => {
   return (
     <>
       { particles ? <Particles params={particlesConfig[particles]}/> : null}
-      <ScrollArea
-        id="mainArea"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-        }}
-      >
+      {/* <ScrollArea */}
+      {/*   id="mainArea" */}
+      {/*   style={{ */}
+      {/*     display: "flex", */}
+      {/*     flexDirection: "column", */}
+      {/*     position: "relative", */}
+      {/*   }} */}
+      {/* > */}
         <Navbar sections={sections}/>
         {children}
         <footer>
@@ -54,7 +54,7 @@ const Layout = ({ children, sections, particles }) => {
           {` `}
           <a href="https://www.gatsbyjs.org">GatsbyJS</a>
         </footer>
-      </ScrollArea>
+      {/* </ScrollArea> */}
     </>
   )
 }
