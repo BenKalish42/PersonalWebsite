@@ -142,6 +142,7 @@ const FadeDelayPage = ({data}) => (
 									</div>
 								</div>
 							</div>
+
 						</div>
 						<div className="main-section-subtitle">The Theory: Fading Through Narrowing</div>
 						<p>
@@ -192,7 +193,7 @@ const FadeDelayPage = ({data}) => (
 						</p>
 						<div className="main-section-subtitle">Power Lock</div>
 						<p>
-							Locks the Feedback and Width Decay parameters together based on the <a href="https://www.youtube.com/watch?v=umTSWJ3POOk">Inverse Distance Law</a>, which keeps the loudness and stereo image of the echoes at the correct proportion based on the laws of physics.
+							Locks the Feedback and Width Decay parameters together based on the <a href="https://www.youtube.com/watch?v=umTSWJ3POOk">Inverse Distance Law</a>, which keeps the loudness and stereo image of the echoes at the correct proportion based on the laws of physics. To defy nature, and take matters into your own hands, turn this off. 
 						</p>
 						<div className="main-section-subtitle">Width Decay</div>
 						<p>
